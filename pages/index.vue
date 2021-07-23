@@ -16,7 +16,7 @@
       >
         <b class="has-text-grey">
           Every
-        </b> component is responsive
+        </b> component is very responsive
       </card>
 
       <card
