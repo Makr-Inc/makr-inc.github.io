@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Makr-Inc.github.io',
+    title: 'makr-inc.github.io',
     htmlAttrs: {
       lang: 'en'
     },
