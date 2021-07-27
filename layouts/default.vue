@@ -1,74 +1,41 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
+    <b-navbar spaced shadow>
+      <template #brand>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <div class="title is-4">Makr</div>
+        </b-navbar-item>
+      </template>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
+      <template #end>
+        <b-navbar-item tag="div">
+            <a class="button is-primary">
+              Join as a pro
+            </a>
+        </b-navbar-item>
+        <b-navbar-item>
+          <a class="is-link">
+            Sign up
+          </a>
+        </b-navbar-item>
+        <b-navbar-item>
+          <a class="is-link">
+            Login
+          </a>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
 
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <NuxtLink
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </aside>
-
-      <div class="container column is-10">
-        <Nuxt />
-      </div>
-    </section>
+    <div class="container column is-10">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data () {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>

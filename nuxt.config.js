@@ -21,6 +21,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/scss/main.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -45,6 +46,9 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
+
+  // Buefy module configuration https://github.com/buefy/nuxt-buefy#options
+  buefy: { css: false },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
