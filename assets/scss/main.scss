@@ -1,11 +1,10 @@
 @charset "utf-8";
+@import "_variables";
 
 // List of variables to override https://bulma.io/documentation/customize/variables/
 // Override variables here
-$orange: #FFA93C;
-$primary: $orange;
-
-$navbar-background-color: rgba(red($primary), green($primary), blue($primary), 0.13);
+$primary: $app-primary;
+$navbar-background-color: $app-primary-background-color;
 
 // Import bulma styles
 @import "~bulma";

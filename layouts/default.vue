@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar spaced shadow>
+    <b-navbar spaced>
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <div class="title is-4">Makr</div>
@@ -8,25 +8,21 @@
       </template>
 
       <template #end>
-        <b-navbar-item tag="div">
-            <a class="button is-primary">
-              Join as a pro
-            </a>
+        <b-navbar-item tag="button" class="button is-primary">
+          Join as a pro
         </b-navbar-item>
-        <b-navbar-item>
-          <a class="is-link">
-            Sign up
-          </a>
+
+        <b-navbar-item tag="a">
+          Sign up
         </b-navbar-item>
-        <b-navbar-item>
-          <a class="is-link">
-            Login
-          </a>
+
+        <b-navbar-item tag="a">
+          Login
         </b-navbar-item>
       </template>
     </b-navbar>
 
-    <div class="container column is-10">
+    <div>
       <Nuxt />
     </div>
   </div>
@@ -39,3 +35,11 @@ export default {
   }
 }
 </script>
+
+<style lang='scss'>
+@import '../assets/scss/main';
+
+.navbar {
+  border-bottom: 1px solid #333;
+}
+</style>
