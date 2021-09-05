@@ -39,7 +39,7 @@ export default {
 <style lang='scss'>
 @import '../assets/scss/main';
 
-.navbar {
-  border-bottom: 1px solid #333;
-}
+//.navbar {
+//  border-bottom: 1px solid #333;
+//}
 </style>

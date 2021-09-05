@@ -7,7 +7,6 @@
 <script>
 import AppHero from '~/components/AppHero'
 export default {
-  name: 'HomePage',
   components: {
     AppHero
   },
