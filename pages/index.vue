@@ -17,8 +17,8 @@ export default {
   data() {
     return {
       hero: {
-        title: 'Get paid for your personalized expertise from anywhere, anytime.',
-        subtitle: 'Help makers accomplish more specific problems with their projects, right from your device'
+        title: 'Personalized expert assistance to help makers accomplish more',
+        subtitle: 'Affordable experts available at anytime to help you get your jobs done with confidence, all from your device'
       }
     }
   },

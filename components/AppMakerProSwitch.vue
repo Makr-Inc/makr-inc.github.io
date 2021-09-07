@@ -1,6 +1,6 @@
 <template>
   <section>
-    <b-field class="is-inline-block p-2 has-background-primary">
+    <b-field class="is-inline-block p-2">
       <b-radio-button v-model="switchValue"
                       native-value="maker"
                       type="is-primary">
@@ -20,7 +20,7 @@
 export default {
   data() {
     return {
-      switchValue: ''
+      switchValue: 'maker'
     }
   },
   watch: {
