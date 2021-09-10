@@ -1,5 +1,5 @@
 <template>
-  <section class="px-6">
+  <section class="section">
     <div class="columns">
       <div class="column" v-for="projectCard in projectCards" :key="projectCard">
         <app-project-card></app-project-card>

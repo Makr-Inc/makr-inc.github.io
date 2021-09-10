@@ -24,7 +24,7 @@
         <h2 class="mb-3 is-size-3 has-text-weight-bold has-text-centered">Meet Makr</h2>
         <p class="px-6 mb-2 has-text-centered">Welcome to Makr, the platform that helps the makers, the doers, and the DIYers accomplish more with <span class="has-text-weight-bold">personalized expert assistance</span> directly from your device.</p>
         <p class="px-6 has-text-centered">We’re on a mission to accomplish more <span class="has-text-weight-bold">together</span>.</p>
-        <figure class="image">
+        <figure class="image m-auto" style="width: 500px">
           <img :src="require('~/assets/meet-makr.png')" alt="Placeholder image">
         </figure>
       </div>
