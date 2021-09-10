@@ -1,5 +1,4 @@
 <template>
-  <section>
     <b-field class="is-inline-block p-2">
       <b-radio-button v-model="switchValue"
                       native-value="maker"
@@ -13,7 +12,6 @@
         Pros
       </b-radio-button>
     </b-field>
-  </section>
 </template>
 
 <script>

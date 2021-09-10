@@ -1,9 +1,10 @@
 <template>
   <section class="hero is-medium is-primary-light">
-    <div class="hero-body">
+    <div class="hero-body pb-6">
       <div class="columns">
         <div class="column is-two-thirds">
-            <p class="title">
+            <app-maker-pro-switch @switch-value="handleSwitchValue"></app-maker-pro-switch>
+            <p class="title is-spaced">
               {{ title }}
             </p>
             <p class="subtitle">
@@ -23,8 +24,8 @@
               </b-field>
             </form>
           </div>
-        <div class="column is-one-third">
-          <img :src="require('~/assets/hero-image.png')" alt="fuck you buefy"/>
+        <div class="column is-one-third is-flex level">
+          <img class="level-item" :src="require('~/assets/hero-image.png')" alt="fuck you buefy"/>
         </div>
       </div>
     </div>
@@ -32,7 +33,12 @@
 </template>
 
 <script>
+import AppMakerProSwitch from '~/components/AppMakerProSwitch'
+
 export default {
+  components: {
+    AppMakerProSwitch
+  },
   props: {
     title: {
       type: String,
@@ -53,6 +59,11 @@ export default {
     selectOptions: {
       type: Array,
       default: () => ['Woodworking', 'Home recording', 'Social media marketing']
+    }
+  },
+  methods: {
+    handleSwitchValue(value) {
+      this.$emit('hero-switch-value', value)
     }
   }
 }
