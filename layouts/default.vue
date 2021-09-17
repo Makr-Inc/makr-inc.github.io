@@ -25,11 +25,14 @@
     <div>
       <Nuxt />
     </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppFooter from '~/components/AppFooter'
 export default {
+  components: { AppFooter },
   data () {
     return {}
   }

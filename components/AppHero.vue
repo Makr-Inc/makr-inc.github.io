@@ -25,7 +25,7 @@
             </form>
           </div>
         <div class="column is-one-third is-flex level">
-          <img class="level-item" :src="require('~/assets/hero-image.png')" alt="fuck you buefy"/>
+          <img class="level-item" :src="require('~/assets/hero-image.png')" alt="hero-image"/>
         </div>
       </div>
     </div>
