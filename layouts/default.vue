@@ -1,74 +1,48 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
+    <b-navbar spaced>
+      <template #brand>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <div class="title is-4">Makr</div>
+        </b-navbar-item>
+      </template>
 
-        <div class="navbar-burger">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-    </nav>
+      <template #end>
+        <b-navbar-item tag="button" class="button is-primary">
+          Join as a pro
+        </b-navbar-item>
 
-    <section class="main-content columns">
-      <aside class="column is-2 section">
-        <p class="menu-label is-hidden-touch">
-          General
-        </p>
-        <ul class="menu-list">
-          <li
-            v-for="(item, key) of items"
-            :key="key"
-          >
-            <NuxtLink
-              :to="item.to"
-              exact-active-class="is-active"
-            >
-              <b-icon :icon="item.icon" /> {{ item.title }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </aside>
+        <b-navbar-item tag="a">
+          Sign up
+        </b-navbar-item>
 
-      <div class="container column is-10">
-        <Nuxt />
-      </div>
-    </section>
+        <b-navbar-item tag="a">
+          Login
+        </b-navbar-item>
+      </template>
+    </b-navbar>
+
+    <div>
+      <Nuxt />
+    </div>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppFooter from '~/components/AppFooter'
 export default {
+  components: { AppFooter },
   data () {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
-        },
-        {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
+
+<style lang='scss'>
+@import '../assets/scss/main';
+
+//.navbar {
+//  border-bottom: 1px solid #333;
+//}
+</style>
