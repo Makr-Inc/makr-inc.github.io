@@ -71,7 +71,7 @@ export default {
 
 <style lang='scss'>
 @import "../assets/scss/variables";
-//.hero {
-//  background-color: $app-primary-background-color;
-//}
+.hero-body {
+  margin: 0 46px;
+}
 </style>
