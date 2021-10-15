@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class='columns'>
-      <div class='column'>
+      <div class='column is-flex is-flex-grow-1'>
         <div class='card'>
           <div class='card-content'>
             <b-icon
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class='column'>
+      <div class='column is-flex is-flex-grow-1'>
         <div class='card'>
           <div class='card-content'>
             <b-icon
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <div class='column'>
+      <div class='column is-flex is-flex-grow-1'>
         <div class='card'>
           <div class='card-content'>
             <b-icon

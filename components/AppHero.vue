@@ -72,6 +72,6 @@ export default {
 <style lang='scss'>
 @import "../assets/scss/variables";
 .hero-body {
-  margin: 0 46px;
+  margin: 0 5rem;
 }
 </style>

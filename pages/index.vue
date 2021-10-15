@@ -40,7 +40,7 @@
         </h3>
       </div>
     </div>
-    <div class="px-6 mb-6">
+    <div class="carousel-container">
       <app-testimonial-carousel></app-testimonial-carousel>
     </div>
     <!--    get feedback fast block -->
@@ -60,7 +60,33 @@
       </div>
       <div class="column"></div>
     </div>
-    <app-how-it-works></app-how-it-works>
+    <!--    how it works block-->
+    <app-how-it-works class='mb-6'></app-how-it-works>
+    <!--    become a makr pro-->
+    <div class='become-a-pro columns'>
+      <div class='column is-two-thirds'>
+        <p class="title is-spaced">
+          Become a Makr pro
+        </p>
+        <p class="subtitle">
+          Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from anywhere.
+        </p>
+        <b-button type="is-primary">Learn More</b-button>
+      </div>
+      <div class="column is-one-third is-flex level">
+        <img class="level-item" :src="require('~/assets/become-a-makr.png')" alt="hero-image"/>
+      </div>
+    </div>
+    <div class='columns is-centered'>
+      <div class='column is-two-thirds'>
+        <p class='title has-text-centered is-size-4'>Common Questions</p>
+        <div v-for='commonQuestion in commonQuestions' :key='commonQuestion.question' class='mb-4'>
+          <p class='has-text-weight-bold'>{{ commonQuestion.question }}</p>
+          <p>{{ commonQuestion.answer }}</p>
+        </div>
+        <p class='mb-6'>Still have questions?  <a href="mailto:mikeulvila@me.com">Send us a message</a></p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -79,6 +105,16 @@ export default {
   },
   data() {
     return {
+      commonQuestions: [{
+        question: 'Am I liable for consulting on maker projects?',
+        answer: 'No, all pros under the Makr network are covered under our liability waiver',
+      }, {
+        question: 'How will I know when I get booked with a maker?',
+        answer: 'We’ll send you a message with your maker’s project details and timing for the booked session',
+      }, {
+        question: 'How long is each personalized session?',
+        answer: 'Each session is 30 minutes long. Makers can request additional time pending your approval.',
+      }],
       hero: {
         title: 'Personalized expert assistance to help makers accomplish more',
         subtitle: 'Affordable experts available at anytime to help you get your jobs done with confidence, all from your device'
@@ -113,3 +149,12 @@ export default {
   }
 }
 </script>
+
+<style lang='scss'>
+.carousel-container {
+  margin: 0 6rem 2rem;
+}
+.become-a-pro {
+  margin: 0 10rem;
+}
+</style>
