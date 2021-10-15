@@ -1,8 +1,8 @@
 <template>
   <section class="section">
     <div class="columns">
-      <div class="column" v-for="projectCard in projectCards" :key="projectCard">
-        <app-project-card></app-project-card>
+      <div v-for="projectCard in exploreProjectCards" :key="projectCard.title" class="column">
+        <app-project-card :project-card='projectCard'></app-project-card>
       </div>
     </div>
   </section>
@@ -16,7 +16,7 @@ export default {
     AppProjectCard
   },
   props: {
-    projectCards: {
+    exploreProjectCards: {
       type: Array,
       default: () => []
     }
