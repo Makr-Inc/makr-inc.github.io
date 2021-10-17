@@ -20,7 +20,7 @@
                     {{ option }}
                   </option>
                 </b-select>
-                <b-button type="is-primary">Get Started</b-button>
+                <b-button type="is-primary">{{ buttonText }}</b-button>
               </b-field>
             </form>
           </div>
@@ -50,11 +50,15 @@ export default {
     },
     selectLabel: {
       type: String,
-      default: 'I need help with...'
+      default: 'Select Label'
     },
     selectPlaceholder: {
       type: String,
-      default: 'ex. Home renovations'
+      default: 'Select Placeholder'
+    },
+    buttonText: {
+      type: String,
+      default: 'Button Text'
     },
     selectOptions: {
       type: Array,
