@@ -1,5 +1,5 @@
 <template>
-  <div class='how-it-works'>
+  <div>
     <div class='columns'>
       <div class='column'>
         <h3 class='is-size-4 has-text-weight-bold'>
@@ -73,9 +73,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.how-it-works {
-  margin: 0 7.5rem;
-}
 .icon {
   margin-bottom: 0.5rem;
 }

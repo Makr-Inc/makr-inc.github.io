@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class='columns'>
-      <div class='column'>
+    <!--    hero block-->
+    <div class='columns is-centered'>
+      <div class='column is-9'>
         <app-hero
           :title='isMaker ? heroMaker.title : heroPro.title'
           :subtitle='isMaker ? heroMaker.subtitle : heroPro.subtitle'
@@ -12,18 +13,22 @@
         ></app-hero>
       </div>
     </div>
-    <div v-if='isMaker' class='columns is-centered is-gapless'>
-      <div class='column is-four-fifths'>
+
+    <!--    explore projects block-->
+    <div v-if='isMaker' class='columns is-centered'>
+      <div class='column is-9'>
         <p class='title is-size-5'>Explore popular projects</p>
       </div>
     </div>
     <div v-if='isMaker' class='columns is-centered mb-5'>
-      <div class='column is-four-fifths has-background-primary-light'>
+      <div class='column is-9 has-background-primary-light'>
         <app-explore-projects :explore-project-cards='exploreProjectCards'></app-explore-projects>
       </div>
     </div>
-    <div class='columns is-centered mb-6'>
-      <div class='column is-three-fifths'>
+
+    <!--    meet makr block-->
+    <div class='columns is-centered'>
+      <div class='column is-6'>
         <h3 class='mb-3 is-size-3 has-text-weight-bold has-text-centered'>Meet Makr</h3>
         <p class='px-6 mb-2 has-text-centered'>Welcome to Makr, the platform that helps the makers, the doers, and the
           DIYers accomplish more with <span class='has-text-weight-bold'>personalized expert assistance</span> directly
@@ -35,61 +40,73 @@
         </figure>
       </div>
     </div>
-    <div v-if='isMaker' class='columns'>
-      <div class='column'>
+
+    <!--    testimonial carousel block -->
+    <div v-if='isMaker' class='columns is-centered'>
+      <div class='column is-9'>
         <h3 class='is-size-4 has-text-weight-bold has-text-centered'>
           Every project has its unique challenges.<br>
           We’re here to help.
         </h3>
       </div>
     </div>
-    <div v-if='isMaker' class="carousel-container">
-      <app-testimonial-carousel></app-testimonial-carousel>
-    </div>
-    <!--    get feedback fast block -->
-    <div v-if='isMaker' class="columns is-vcentered">
-      <div class="column"></div>
-      <div class="column is-one-third">
-        <img class="image" :src="require('~/assets/get-feedback.png')" alt="get-feedback-image"/>
+    <div v-if='isMaker' class='columns is-centered'>
+      <div class='column is-9'>
+        <app-testimonial-carousel></app-testimonial-carousel>
       </div>
-      <div class="column is-one-third">
-        <p class="mb-4 is-size-3 has-text-weight-bold">
+    </div>
+
+    <!--    get feedback fast block -->
+    <div v-if='isMaker' class='columns is-vcentered'>
+      <div class='column is-one-third is-offset-2'>
+        <img class='image' :src="require('~/assets/get-feedback.png')" alt='get-feedback-image' />
+      </div>
+      <div class='column is-one-third'>
+        <p class='mb-4 is-size-3 has-text-weight-bold'>
           Get the feedback and confidence you need fast
         </p>
-        <p class="mb-6">
-          Whether you need quick answers, project-specific feedback, or step-by-step guidance, our pros are available at anytime to get you where you’re going
+        <p class='mb-6'>
+          Whether you need quick answers, project-specific feedback, or step-by-step guidance, our pros are available at
+          anytime to get you where you’re going
         </p>
-        <b-button type="is-primary">Start Getting Feedback</b-button>
+        <b-button type='is-primary'>Start Getting Feedback</b-button>
       </div>
-      <div class="column"></div>
     </div>
 
     <!--    how it works maker block-->
-    <app-how-it-works v-if='isMaker' :is-maker='isMaker' class='mb-6'></app-how-it-works>
-
-<!--    become a makr pro-->
-    <div v-if='isMaker' class='become-a-pro columns mb-6'>
-      <div class='column is-two-thirds'>
-        <p class="title is-spaced">
-          Become a Makr pro
-        </p>
-        <p class="subtitle">
-          Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from anywhere.
-        </p>
-        <b-button type="is-primary">Learn More</b-button>
-      </div>
-      <div class="column is-one-third is-flex level">
-        <img class="level-item" :src="require('~/assets/become-a-makr.png')" alt="become a pro"/>
+    <div class='columns is-centered'>
+      <div class='column is-9'>
+        <app-how-it-works v-if='isMaker' :is-maker='isMaker' class='mb-6'></app-how-it-works>
       </div>
     </div>
 
-<!--    set your own hours pro block-->
+    <!--    become a makr pro-->
+    <div v-if='isMaker' class='columns is-centered'>
+      <div class='column is-9'>
+        <div class='columns is-centered mb-6'>
+          <div class='column is-two-thirds'>
+            <p class='title is-spaced'>
+              Become a Makr pro
+            </p>
+            <p class='subtitle pr-6'>
+              Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from anywhere.
+            </p>
+            <b-button type='is-primary'>Learn More</b-button>
+          </div>
+          <div class='column is-one-third is-flex level'>
+            <img class='level-item' :src="require('~/assets/become-a-makr.png')" alt='become a pro' />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--    set your own hours pro block-->
     <div v-if='!isMaker' class='columns is-vcentered mb-6'>
       <div class='column is-4 is-offset-2'>
-        <img class="level-item" :src="require('~/assets/become-a-makr.png')" alt="become a pro"/>
+        <img class='level-item' :src="require('~/assets/become-a-makr.png')" alt='become a pro' />
       </div>
       <div class='column is-4'>
-        <p class="title is-spaced">
+        <p class='title is-spaced'>
           Set your own hours.
           <br>
           Earn on your own terms.
@@ -109,23 +126,24 @@
       </div>
     </div>
 
-<!--    full liability coverage block-->
+    <!--    full liability coverage block-->
     <div v-if='!isMaker' class='columns is-centered mb-6'>
       <div class='column is-8'>
         <div class='notification is-warning is-light has-text-centered px-6 has-text-black'>
           <p class='has-text-weight-bold is-size-5'>
             Full liability coverage
           </p>
-          <p>We’ve got you covered so you can help makers with ease. We ensure that you’re never liable for projects you’re supporting through Makr.</p>
+          <p>We’ve got you covered so you can help makers with ease. We ensure that you’re never liable for projects
+            you’re supporting through Makr.</p>
         </div>
       </div>
     </div>
 
-<!--    pro how it works block-->
+    <!--    pro how it works block-->
     <app-how-it-works v-if='!isMaker' :is-maker='isMaker' class='mb-6'></app-how-it-works>
 
-<!--    opportunity is waiting for you-->
-    <div class='columns is-centered'>
+    <!--    opportunity is waiting for you-->
+    <div v-if='!isMaker' class='columns is-centered'>
       <div class='column has-text-centered p-5 mb-6 has-background-primary-light'>
         <p class='title is-size-5 mb-3'>Opportunity is waiting for you</p>
         <p class='mb-3'>Join today to support projects and earn on your own terms</p>
@@ -133,7 +151,7 @@
       </div>
     </div>
 
-<!--    common questions block-->
+    <!--    common questions block-->
     <div class='columns is-centered'>
       <div class='column is-two-thirds'>
         <p class='title has-text-centered is-size-4'>Common Questions</p>
@@ -141,7 +159,7 @@
           <p class='has-text-weight-bold'>{{ commonQuestion.question }}</p>
           <p>{{ commonQuestion.answer }}</p>
         </div>
-        <p class='mb-6'>Still have questions?  <a href="mailto:mikeulvila@me.com">Send us a message</a></p>
+        <p class='mb-6'>Still have questions? <a href='mailto:mikeulvila@me.com'>Send us a message</a></p>
       </div>
     </div>
   </div>
@@ -164,13 +182,13 @@ export default {
     return {
       commonQuestions: [{
         question: 'Am I liable for consulting on maker projects?',
-        answer: 'No, all pros under the Makr network are covered under our liability waiver',
+        answer: 'No, all pros under the Makr network are covered under our liability waiver'
       }, {
         question: 'How will I know when I get booked with a maker?',
-        answer: 'We’ll send you a message with your maker’s project details and timing for the booked session',
+        answer: 'We’ll send you a message with your maker’s project details and timing for the booked session'
       }, {
         question: 'How long is each personalized session?',
-        answer: 'Each session is 30 minutes long. Makers can request additional time pending your approval.',
+        answer: 'Each session is 30 minutes long. Makers can request additional time pending your approval.'
       }],
       heroMaker: {
         title: 'Personalized expert assistance to help makers accomplish more',
@@ -221,8 +239,5 @@ export default {
 <style lang='scss'>
 .carousel-container {
   margin: 0 6rem 2rem;
-}
-.become-a-pro {
-  margin: 0 10rem;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <section class="hero is-medium is-primary-light">
-    <div class="hero-body pb-6">
+    <div class="hero-body px-0 py-6">
       <div class="columns">
         <div class="column is-two-thirds">
             <app-maker-pro-switch @switch-value="handleSwitchValue"></app-maker-pro-switch>
@@ -72,10 +72,3 @@ export default {
   }
 }
 </script>
-
-<style lang='scss'>
-@import "../assets/scss/variables";
-.hero-body {
-  margin: 0 5rem;
-}
-</style>
