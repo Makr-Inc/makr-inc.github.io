@@ -35,7 +35,7 @@
           from your device.</p>
         <p class='px-6 has-text-centered'>We’re on a mission to accomplish more <span class='has-text-weight-bold'>together</span>.
         </p>
-        <figure v-if='isMaker' class='image m-auto' style='width: 500px'>
+        <figure v-if='isMaker' class='image m-auto'>
           <img :src="require('~/assets/meet-makr.png')" alt='Placeholder image'>
         </figure>
       </div>
