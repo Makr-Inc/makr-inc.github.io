@@ -11,8 +11,8 @@
               {{ subtitle }}
             </p>
             <div class='select-and-button-container'>
-              <b-field :label="selectLabel" grouped>
-                <b-select class='mr-3' :placeholder="selectPlaceholder">
+              <b-field :label="selectLabel">
+                <b-select :placeholder="selectPlaceholder" expanded>
                   <option
                     v-for="option in selectOptions"
                     :key="option"
@@ -75,15 +75,26 @@ export default {
 
 <style lang='scss' scoped>
 @import "~bulma/sass/utilities/_all.sass";
+
 .select-and-button-container {
   display: flex;
   align-items: flex-end;
 }
+.field {
+  .control {
+    margin-right: 1rem;
+  }
+}
+
 @include mobile {
   .select-and-button-container {
     flex-direction: column;
-    align-items: center;
-    align-content: stretch;
+    align-items: stretch;
+  }
+  .field {
+    .control {
+      margin-right: 0;
+    }
   }
 }
 </style>
