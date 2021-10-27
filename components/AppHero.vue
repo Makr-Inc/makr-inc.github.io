@@ -4,15 +4,15 @@
       <div class="columns">
         <div class="column is-two-thirds">
             <app-maker-pro-switch @switch-value="handleSwitchValue"></app-maker-pro-switch>
-            <p class="title is-spaced">
+            <p class="title is-spaced is-size-4-mobile">
               {{ title }}
             </p>
-            <p class="subtitle">
+            <p class="subtitle is-hidden-mobile">
               {{ subtitle }}
             </p>
-            <form>
+            <div class='select-and-button-container'>
               <b-field :label="selectLabel" grouped>
-                <b-select :placeholder="selectPlaceholder">
+                <b-select class='mr-3' :placeholder="selectPlaceholder">
                   <option
                     v-for="option in selectOptions"
                     :key="option"
@@ -20,9 +20,9 @@
                     {{ option }}
                   </option>
                 </b-select>
-                <b-button type="is-primary">{{ buttonText }}</b-button>
               </b-field>
-            </form>
+              <b-button class='mb-3' type="is-primary">{{ buttonText }}</b-button>
+            </div>
           </div>
         <div class="column is-one-third is-flex level">
           <img class="level-item" :src="require('~/assets/hero-image.png')" alt="hero-image"/>
@@ -72,3 +72,18 @@ export default {
   }
 }
 </script>
+
+<style lang='scss' scoped>
+@import "~bulma/sass/utilities/_all.sass";
+.select-and-button-container {
+  display: flex;
+  align-items: flex-end;
+}
+@include mobile {
+  .select-and-button-container {
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+  }
+}
+</style>
