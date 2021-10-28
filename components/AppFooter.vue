@@ -1,6 +1,6 @@
 <template>
   <footer class="footer is-flex is-justify-content-center is-align-items-center">
-    <figure class='image mr-6' style='width: 200px'>
+    <figure class='image mr-4' style='width: 200px'>
       <img :src="require('~/assets/makr-logo.png')" alt='Maker logo'>
     </figure>
     <div class="block">

@@ -44,25 +44,24 @@
     <!--    testimonial carousel block -->
     <div v-if='isMaker' class='columns is-centered'>
       <div class='column is-9'>
-        <h3 class='is-size-4 has-text-weight-bold has-text-centered'>
+        <p class='title is-size-4 has-text-centered'>
           Every project has its unique challenges.<br>
           We’re here to help.
-        </h3>
+        </p>
       </div>
     </div>
     <div v-if='isMaker' class='columns is-centered'>
       <div class='column is-9'>
-        <app-testimonial-carousel></app-testimonial-carousel>
+        <app-testimonial-carousel class='is-hidden-mobile'></app-testimonial-carousel>
+        <app-testimonial-card v-for='testimony in testimonies' :key='testimony.title' class='is-hidden-tablet'
+                              :testimony='testimony'></app-testimonial-card>
       </div>
     </div>
 
     <!--    get feedback fast block -->
     <div v-if='isMaker' class='columns is-vcentered'>
-      <div class='column is-one-third is-offset-2'>
-        <img class='image' :src="require('~/assets/get-feedback.png')" alt='get-feedback-image' />
-      </div>
-      <div class='column is-one-third'>
-        <p class='mb-4 is-size-3 has-text-weight-bold'>
+      <div class='column is-one-third is-offset-2 has-text-centered'>
+        <p class='title is-size-4 mb-4'>
           Get the feedback and confidence you need fast
         </p>
         <p class='mb-6'>
@@ -70,6 +69,9 @@
           anytime to get you where you’re going
         </p>
         <b-button type='is-primary'>Start Getting Feedback</b-button>
+      </div>
+      <div class='column is-one-third'>
+        <img class='image' :src="require('~/assets/get-feedback.png')" alt='get-feedback-image' />
       </div>
     </div>
 
@@ -85,11 +87,12 @@
       <div class='column is-9'>
         <div class='columns is-centered mb-6'>
           <div class='column is-two-thirds'>
-            <p class='title is-spaced'>
+            <p class='title is-size-4-mobile is-spaced'>
               Become a Makr pro
             </p>
-            <p class='subtitle pr-6'>
-              Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from anywhere.
+            <p class='subtitle is-size-5-mobile pr-6'>
+              Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from
+              anywhere.
             </p>
             <b-button type='is-primary'>Learn More</b-button>
           </div>
@@ -170,9 +173,11 @@ import AppExploreProjects from '~/components/AppExploreProjects'
 import AppHero from '~/components/AppHero'
 import AppTestimonialCarousel from '~/components/AppTestimonialCarousel'
 import AppHowItWorks from '~/components/AppHowItWorks'
+import AppTestimonialCard from '~/components/AppTestimonialCard'
 
 export default {
   components: {
+    AppTestimonialCard,
     AppHowItWorks,
     AppExploreProjects,
     AppHero,
@@ -225,7 +230,20 @@ export default {
         prosAvailable: 5,
         priceRange: '$15 - 40'
       }],
-      isMaker: true
+      isMaker: true,
+      testimonies: [
+        {
+          title: 'Home Renovation Issues',
+          quote: 'We watched hours of YouTube, read countless articles, joined Facebook groups and Reddit threads. None of them gave us the specific answers we were looking for with our plumbing system.',
+          author: 'Jamie',
+          location: 'Detroit, MI'
+        }, {
+          title: 'Step-by-step walk through',
+          quote: 'Makr helped us find an affordable pro that guided us through our exact problems in under 30 minutes with confidence. Its like telehealth but for the DIYers and their projects.',
+          author: 'Robert',
+          location: 'Greenville, SC'
+        }
+      ]
     }
   },
   methods: {

@@ -2,7 +2,7 @@
   <div>
     <div class='columns'>
       <div class='column'>
-        <h3 class='is-size-4 has-text-weight-bold'>
+        <h3 class='is-size-4 has-text-weight-bold has-text-centered-mobile'>
           How it works
         </h3>
       </div>
