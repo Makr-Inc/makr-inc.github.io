@@ -27,7 +27,7 @@
     </div>
 
     <!--    meet makr block-->
-    <div class='columns is-centered'>
+    <div class='columns is-centered mb-6'>
       <div class='column is-6'>
         <h3 class='mb-3 is-size-3 has-text-weight-bold has-text-centered'>Meet Makr</h3>
         <p class='px-6 mb-2 has-text-centered'>Welcome to Makr, the platform that helps the makers, the doers, and the
@@ -76,9 +76,9 @@
     </div>
 
     <!--    how it works maker block-->
-    <div class='columns is-centered'>
+    <div v-if='isMaker' class='columns is-centered'>
       <div class='column is-9'>
-        <app-how-it-works v-if='isMaker' :is-maker='isMaker' class='mb-6'></app-how-it-works>
+        <app-how-it-works :is-maker='isMaker' class='mb-6'></app-how-it-works>
       </div>
     </div>
 
@@ -105,11 +105,11 @@
 
     <!--    set your own hours pro block-->
     <div v-if='!isMaker' class='columns is-vcentered mb-6'>
-      <div class='column is-4 is-offset-2'>
+      <div class='column is-4 is-offset-2 is-hidden-mobile'>
         <img class='level-item' :src="require('~/assets/become-a-makr.png')" alt='become a pro' />
       </div>
       <div class='column is-4'>
-        <p class='title is-spaced'>
+        <p class='title is-size-4 is-spaced'>
           Set your own hours.
           <br>
           Earn on your own terms.
@@ -132,18 +132,32 @@
     <!--    full liability coverage block-->
     <div v-if='!isMaker' class='columns is-centered mb-6'>
       <div class='column is-8'>
-        <div class='notification is-warning is-light has-text-centered px-6 has-text-black'>
-          <p class='has-text-weight-bold is-size-5'>
-            Full liability coverage
+        <div class='notification is-warning is-light has-text-black'>
+          <div class='is-flex is-justify-content-center is-align-items-center'>
+            <b-icon
+              class='mr-3'
+              icon="format-list-bulleted"
+              size="is-large"
+              type="is-black"
+            />
+            <p class='has-text-weight-bold is-size-5'>
+              Full liability coverage
+            </p>
+          </div>
+          <p class='has-text-centered'>
+            We’ve got you covered so you can help makers with ease. We ensure that you’re never liable for projects
+            you’re supporting through Makr.
           </p>
-          <p>We’ve got you covered so you can help makers with ease. We ensure that you’re never liable for projects
-            you’re supporting through Makr.</p>
         </div>
       </div>
     </div>
 
     <!--    pro how it works block-->
-    <app-how-it-works v-if='!isMaker' :is-maker='isMaker' class='mb-6'></app-how-it-works>
+    <div v-if='!isMaker' class='columns is-centered'>
+      <div class='column is-9'>
+        <app-how-it-works :is-maker='isMaker' class='mb-6'></app-how-it-works>
+      </div>
+    </div>
 
     <!--    opportunity is waiting for you-->
     <div v-if='!isMaker' class='columns is-centered'>
@@ -157,7 +171,7 @@
     <!--    common questions block-->
     <div class='columns is-centered'>
       <div class='column is-two-thirds'>
-        <p class='title has-text-centered is-size-4'>Common Questions</p>
+        <p class='title has-text-centered-tablet is-size-4'>Common Questions</p>
         <div v-for='commonQuestion in commonQuestions' :key='commonQuestion.question' class='mb-4'>
           <p class='has-text-weight-bold'>{{ commonQuestion.question }}</p>
           <p>{{ commonQuestion.answer }}</p>
