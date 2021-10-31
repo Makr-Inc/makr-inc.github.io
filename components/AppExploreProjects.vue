@@ -1,11 +1,9 @@
 <template>
-  <section class="section">
-    <div class="columns">
-      <div v-for="projectCard in exploreProjectCards" :key="projectCard.title" class="column">
-        <app-project-card :project-card='projectCard'></app-project-card>
-      </div>
+  <div class="columns p-6">
+    <div v-for="projectCard in exploreProjectCards" :key="projectCard.title" class="column mx-2">
+      <app-project-card :project-card='projectCard'></app-project-card>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

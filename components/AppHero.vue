@@ -1,18 +1,18 @@
 <template>
   <section class="hero is-medium is-primary-light">
-    <div class="hero-body pb-6">
+    <div class="hero-body px-0 py-6">
       <div class="columns">
         <div class="column is-two-thirds">
             <app-maker-pro-switch @switch-value="handleSwitchValue"></app-maker-pro-switch>
-            <p class="title is-spaced">
+            <p class="title is-spaced is-size-4-mobile">
               {{ title }}
             </p>
-            <p class="subtitle">
+            <p class="subtitle is-hidden-mobile">
               {{ subtitle }}
             </p>
-            <form>
-              <b-field :label="selectLabel" grouped>
-                <b-select :placeholder="selectPlaceholder">
+            <div class='select-and-button-container'>
+              <b-field :label="selectLabel">
+                <b-select :placeholder="selectPlaceholder" expanded>
                   <option
                     v-for="option in selectOptions"
                     :key="option"
@@ -20,9 +20,9 @@
                     {{ option }}
                   </option>
                 </b-select>
-                <b-button type="is-primary">{{ buttonText }}</b-button>
               </b-field>
-            </form>
+              <b-button class='mb-3' type="is-primary">{{ buttonText }}</b-button>
+            </div>
           </div>
         <div class="column is-one-third is-flex level">
           <img class="level-item" :src="require('~/assets/hero-image.png')" alt="hero-image"/>
@@ -73,9 +73,28 @@ export default {
 }
 </script>
 
-<style lang='scss'>
-@import "../assets/scss/variables";
-.hero-body {
-  margin: 0 5rem;
+<style lang='scss' scoped>
+@import "~bulma/sass/utilities/_all.sass";
+
+.select-and-button-container {
+  display: flex;
+  align-items: flex-end;
+}
+.field {
+  .control {
+    margin-right: 1rem;
+  }
+}
+
+@include mobile {
+  .select-and-button-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .field {
+    .control {
+      margin-right: 0;
+    }
+  }
 }
 </style>

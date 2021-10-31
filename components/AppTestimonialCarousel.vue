@@ -1,24 +1,15 @@
 <template>
   <b-carousel-list v-model='showing' :data='testimonies' :items-to-show='2' :arrow-hover="false" icon-size="is-large">
     <template #item='testimony'>
-      <div class='card'>
-        <div class="card-content">
-          <p class='title is-size-5'>{{ testimony.title }}</p>
-          <blockquote class="is-size-6 has-text-weight-medium">
-            “{{ testimony.quote }}”
-          </blockquote>
-          <br>
-          <p class="is-italic">
-            - {{ testimony.author }} | {{ testimony.location }}
-          </p>
-        </div>
-      </div>
+      <app-testimonial-card :testimony='testimony'></app-testimonial-card>
     </template>
   </b-carousel-list>
 </template>
 
 <script>
+import AppTestimonialCard from '~/components/AppTestimonialCard'
 export default {
+  components: { AppTestimonialCard },
   data() {
     return {
       showing: 0,
@@ -51,8 +42,11 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
-.card-content {
-  padding: 1.5rem 4.5rem;
+<style lang='scss'>
+.carousel-arrow .icon.has-icons-right {
+  right: 0;
+}
+.carousel-arrow .icon.has-icons-left {
+  left: 0;
 }
 </style>

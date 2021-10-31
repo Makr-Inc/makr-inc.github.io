@@ -1,6 +1,8 @@
 <template>
   <footer class="footer is-flex is-justify-content-center is-align-items-center">
-    <p class='mr-6 is-size-3 has-text-weight-bold'>Makr</p>
+    <figure class='image mr-4' style='width: 200px'>
+      <img :src="require('~/assets/makr-logo.png')" alt='Maker logo'>
+    </figure>
     <div class="block">
       <b-icon
         icon="facebook"
