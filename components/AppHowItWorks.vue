@@ -2,19 +2,19 @@
   <div>
     <div class='columns'>
       <div class='column'>
-        <h3 class='is-size-4 has-text-weight-bold has-text-centered-mobile'>
+        <h3 class='is-size-4 has-text-weight-bold has-text-centered-mobile has-text-black'>
           How it works
         </h3>
       </div>
     </div>
     <div class='columns'>
       <div v-for='item in howItWorks' :key='item.title' class='column is-flex is-flex-grow-1'>
-        <div class='card'>
-          <div class='card-content'>
+        <div class='card' :class='[ isMaker ? "has-background-info" : "has-background-primary" ]'>
+          <div class='card-content has-text-black'>
             <b-icon
-              :icon="item.icon"
-              size="is-medium"
-              type="is-black">
+              :icon='item.icon'
+              size='is-medium'
+              type='is-black'>
             </b-icon>
             <p class='has-text-weight-bold'>{{ item.title }}</p>
             <br>

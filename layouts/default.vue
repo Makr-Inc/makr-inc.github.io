@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-navbar></app-navbar>
+    <app-navbar :is-maker='isMaker'></app-navbar>
     <Nuxt />
     <app-footer></app-footer>
   </div>
@@ -13,7 +13,14 @@ import AppNavbar from '~/components/AppNavbar'
 export default {
   components: { AppFooter, AppNavbar },
   data() {
-    return {}
+    return {
+      isMaker: true
+    }
+  },
+  created () {
+    this.$nuxt.$on('is-maker', isMaker => {
+      this.isMaker = isMaker
+    })
   }
 }
 </script>
