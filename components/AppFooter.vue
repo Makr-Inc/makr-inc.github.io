@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer is-flex is-justify-content-center is-align-items-center">
-    <figure class='image mr-4' style='width: 200px'>
-      <img :src="require('~/assets/makr-logo.png')" alt='Maker logo'>
+  <footer class="footer is-flex is-justify-content-center is-align-items-center has-background-primary-light">
+    <figure class='image mr-4' style='width: 165px'>
+      <img :src="require('~/assets/makr-logo-black.png')" alt='Maker logo'>
     </figure>
     <div class="block">
       <b-icon

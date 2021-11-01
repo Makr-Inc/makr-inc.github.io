@@ -4,7 +4,7 @@
       <div class="columns">
         <div class="column is-two-thirds">
             <app-maker-pro-switch @switch-value="handleSwitchValue"></app-maker-pro-switch>
-            <p class="title is-spaced is-size-4-mobile">
+            <p class="title is-spaced is-size-5-mobile">
               {{ title }}
             </p>
             <p class="subtitle is-hidden-mobile">

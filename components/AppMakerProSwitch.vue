@@ -1,5 +1,5 @@
 <template>
-    <b-field class="is-inline-block p-2">
+    <b-field class="is-inline-block mb-4">
       <b-radio-button v-model="switchValue"
                       native-value="maker"
                       type="is-primary">
