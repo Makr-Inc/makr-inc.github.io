@@ -1,7 +1,10 @@
 <template>
   <div>
     <!--    hero block-->
-    <div class='columns is-centered'>
+    <div
+      class='columns is-centered mb-6'
+      :class='[ isMaker ? "has-background-orange" : "has-background-warning" ]'
+    >
       <div class='column is-9'>
         <app-hero
           :title='isMaker ? heroMaker.title : heroPro.title'
@@ -42,7 +45,7 @@
     </div>
 
     <!--    testimonial carousel block -->
-    <div v-if='isMaker' class='columns is-centered'>
+    <div v-if='isMaker' class='columns is-centered has-background-warning'>
       <div class='column is-9'>
         <p class='title is-size-4 has-text-centered'>
           Every project has its unique challenges.<br>
@@ -50,7 +53,7 @@
         </p>
       </div>
     </div>
-    <div v-if='isMaker' class='columns is-centered'>
+    <div v-if='isMaker' class='columns is-centered has-background-warning mb-6'>
       <div class='column is-9'>
         <app-testimonial-carousel class='is-hidden-mobile'></app-testimonial-carousel>
         <app-testimonial-card v-for='testimony in testimonies' :key='testimony.title' class='is-hidden-tablet'
@@ -76,7 +79,7 @@
     </div>
 
     <!--    how it works maker block-->
-    <div v-if='isMaker' class='columns is-centered'>
+    <div v-if='isMaker' class='columns is-centered has-background-info mb-6'>
       <div class='column is-9'>
         <app-how-it-works :is-maker='isMaker' class='mb-6'></app-how-it-works>
       </div>
@@ -115,15 +118,39 @@
           Earn on your own terms.
         </p>
         <div class='mb-4'>
-          <p class='has-text-weight-bold'>Earn anytime</p>
+          <p class='is-flex is-align-items-center has-text-weight-bold'>
+            <b-icon
+              class='mr-2'
+              icon="cash"
+              size="is-medium"
+              type="is-black">
+          </b-icon>
+            Earn anytime
+          </p>
           <p>You can work when you want and earn money instantly</p>
         </div>
         <div class='mb-4'>
-          <p class='has-text-weight-bold'>Set your own schedule</p>
+          <p class='is-flex is-align-items-center has-text-weight-bold'>
+            <b-icon
+              class='mr-2'
+              icon="clock-outline"
+              size="is-medium"
+              type="is-black">
+            </b-icon>
+            Set your own schedule
+          </p>
           <p>Only work when it’s convenient for you. You own your schedule</p>
         </div>
         <div class='mb-4'>
-          <p class='has-text-weight-bold'>Help makers from anywhere</p>
+          <p class='is-flex is-align-items-center has-text-weight-bold'>
+            <b-icon
+              class='mr-2'
+              icon="earth"
+              size="is-medium"
+              type="is-black">
+            </b-icon>
+            Help makers from anywhere
+          </p>
           <p>Share your expertise with makers from anywhere in the world. All you need is a connection to earn</p>
         </div>
       </div>
@@ -132,7 +159,7 @@
     <!--    full liability coverage block-->
     <div v-if='!isMaker' class='columns is-centered mb-6'>
       <div class='column is-8'>
-        <div class='notification is-warning is-light has-text-black'>
+        <div class='notification is-info is-light has-text-black'>
           <div class='is-flex is-justify-content-center is-align-items-center'>
             <b-icon
               class='mr-3'
@@ -153,7 +180,7 @@
     </div>
 
     <!--    pro how it works block-->
-    <div v-if='!isMaker' class='columns is-centered'>
+    <div v-if='!isMaker' class='columns is-centered has-background-primary mb-6'>
       <div class='column is-9'>
         <app-how-it-works :is-maker='isMaker' class='mb-6'></app-how-it-works>
       </div>
@@ -161,7 +188,7 @@
 
     <!--    opportunity is waiting for you-->
     <div v-if='!isMaker' class='columns is-centered'>
-      <div class='column has-text-centered p-5 mb-6 has-background-primary-light'>
+      <div class='column has-text-centered p-5 mb-6'>
         <p class='title is-size-5 mb-3'>Opportunity is waiting for you</p>
         <p class='mb-3'>Join today to support projects and earn on your own terms</p>
         <b-button type='is-primary'>Become a Makr Pro</b-button>
@@ -169,7 +196,7 @@
     </div>
 
     <!--    common questions block-->
-    <div class='columns is-centered'>
+    <div class='columns is-centered has-background-primary-light'>
       <div class='column is-two-thirds'>
         <p class='title has-text-centered-tablet is-size-4'>Common Questions</p>
         <div v-for='commonQuestion in commonQuestions' :key='commonQuestion.question' class='mb-4'>
@@ -263,13 +290,18 @@ export default {
   methods: {
     handleHeroSwitchValue(value) {
       this.isMaker = value === 'maker'
+      this.$nuxt.$emit('is-maker', this.isMaker);
     }
   }
 }
 </script>
 
 <style lang='scss'>
+@import "assets/scss/main";
 .carousel-container {
   margin: 0 6rem 2rem;
+}
+.has-background-orange {
+  background-color: lighten($orange, 10%);
 }
 </style>

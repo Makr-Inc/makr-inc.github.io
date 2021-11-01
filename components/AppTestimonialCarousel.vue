@@ -43,10 +43,10 @@ export default {
 </script>
 
 <style lang='scss'>
-.carousel-arrow .icon.has-icons-right {
+.carousel-arrow .icon.has-icons-right.is-large {
   right: 0;
 }
-.carousel-arrow .icon.has-icons-left {
+.carousel-arrow .icon.has-icons-left.is-large {
   left: 0;
 }
 </style>

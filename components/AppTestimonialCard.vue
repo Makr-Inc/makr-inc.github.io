@@ -1,5 +1,5 @@
 <template>
-  <div class='card'>
+  <div class='card has-background-warning'>
     <div class="card-content">
       <p class='title is-size-5'>{{ testimony.title }}</p>
       <blockquote class="is-size-6 has-text-weight-medium">
