@@ -9,16 +9,8 @@
     </template>
 
     <template #end>
-      <b-navbar-item tag="button" class="button is-primary">
-        Join as a pro
-      </b-navbar-item>
-
-      <b-navbar-item tag="a">
-        Sign up
-      </b-navbar-item>
-
-      <b-navbar-item tag="a">
-        Login
+      <b-navbar-item tag="button" href='http://eepurl.com/hNXWtT' class="button is-primary">
+        Join the mailing list
       </b-navbar-item>
     </template>
   </b-navbar>

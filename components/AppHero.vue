@@ -21,7 +21,7 @@
                   </option>
                 </b-select>
               </b-field>
-              <b-button class='mb-3' type="is-primary">{{ buttonText }}</b-button>
+              <b-button tag='a' href='http://eepurl.com/hNXWtT' class='mb-3' type="is-primary">{{ buttonText }}</b-button>
             </div>
           </div>
         <div class="column is-one-third is-flex level">
