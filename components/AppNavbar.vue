@@ -9,7 +9,7 @@
     </template>
 
     <template #end>
-      <b-navbar-item tag="button" href='http://eepurl.com/hNXWtT' class="button is-primary">
+      <b-navbar-item tag="a" href='http://eepurl.com/hNXWtT' class="button is-primary">
         Join the mailing list
       </b-navbar-item>
     </template>
