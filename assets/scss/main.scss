@@ -3,13 +3,15 @@
 
 // List of variables to override https://bulma.io/documentation/customize/variables/
 // Override variables here
-$primary: #D35573;
-// used for $warning
+$green: #98DE9F;
 $yellow: #FBE078;
-
+$blue: #324254;
 $cyan: #6DB9CD;
+$orange: #FF9559;
 
-$orange: #FB9E78;
+$primary: $green;
+$info: $blue;
+$link: hsl(229, 53%, 53%);
 
 // $navbar-background-color: $app-primary-background-color;
 

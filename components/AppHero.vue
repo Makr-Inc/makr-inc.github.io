@@ -21,7 +21,7 @@
                   </option>
                 </b-select>
               </b-field>
-              <b-button tag='a' href='http://eepurl.com/hNXWtT' class='mb-3' type="is-primary">{{ buttonText }}</b-button>
+              <b-button tag='a' href='http://eepurl.com/hNXWtT' class='mb-3' :class='buttonColor'>{{ buttonText }}</b-button>
             </div>
           </div>
         <div class="column is-one-third is-flex level">
@@ -59,6 +59,10 @@ export default {
     buttonText: {
       type: String,
       default: 'Button Text'
+    },
+    buttonColor: {
+      type: String,
+      default: 'has-background-info'
     },
     selectOptions: {
       type: Array,

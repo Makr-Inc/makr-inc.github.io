@@ -3,7 +3,7 @@
     <!--    hero block-->
     <div
       class='columns is-centered mb-6'
-      :class='[ isMaker ? "has-background-orange" : "has-background-warning" ]'
+      :class='[ isMaker ? "has-background-primary" : "has-background-info" ]'
     >
       <div class='column is-9'>
         <app-hero
@@ -12,6 +12,7 @@
           :select-label='isMaker ? heroMaker.selectLabel : heroPro.selectLabel'
           :select-placeholder='isMaker ? heroMaker.selectPlaceholder : heroPro.selectPlaceholder'
           :button-text='isMaker ? heroMaker.buttonText : heroPro.buttonText'
+          :button-color='isMaker ? heroMaker.buttonColor : heroPro.buttonColor'
           @hero-switch-value='handleHeroSwitchValue'
         ></app-hero>
       </div>
@@ -241,14 +242,16 @@ export default {
         subtitle: 'Affordable experts available at anytime to help you get your jobs done with confidence, all from your device',
         selectLabel: 'I need help with...',
         selectPlaceholder: 'ex. Home renovations',
-        buttonText: 'Get Started'
+        buttonText: 'Get Started',
+        buttonColor: 'has-background-info'
       },
       heroPro: {
         title: 'Get paid for your personalized expertise from anywhere, anytime.',
         subtitle: 'Help makers accomplish more specific problems with their projects, right from your device',
         selectLabel: 'I can help makers with...',
         selectPlaceholder: 'Select your area of expertise',
-        buttonText: 'Start Earning'
+        buttonText: 'Start Earning',
+        buttonColor: 'has-background-primary'
       },
       exploreProjectCards: [{
         title: 'Interior Design',
@@ -300,8 +303,5 @@ export default {
 @import "assets/scss/main";
 .carousel-container {
   margin: 0 6rem 2rem;
-}
-.has-background-orange {
-  background-color: lighten($orange, 10%);
 }
 </style>

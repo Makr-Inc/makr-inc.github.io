@@ -1,5 +1,5 @@
 <template>
-  <b-navbar :class='[ isMaker ? "has-background-orange" : "has-background-warning" ]' spaced>
+  <b-navbar :class='[ isMaker ? "has-background-primary" : "has-background-info" ]' spaced>
     <template #brand>
       <b-navbar-item>
         <figure class='image'>
@@ -32,8 +32,5 @@ export default {
 
 .navbar-item img {
   max-height: 3rem;
-}
-.has-background-orange {
-  background-color: lighten($orange, 10%);
 }
 </style>

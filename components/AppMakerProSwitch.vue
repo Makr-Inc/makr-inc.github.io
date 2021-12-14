@@ -2,7 +2,7 @@
     <b-field class="is-inline-block mb-4">
       <b-radio-button v-model="switchValue"
                       native-value="maker"
-                      type="is-primary">
+                      type="is-info">
         Makers
       </b-radio-button>
 
