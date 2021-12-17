@@ -13,6 +13,7 @@
           :select-placeholder='isMaker ? heroMaker.selectPlaceholder : heroPro.selectPlaceholder'
           :button-text='isMaker ? heroMaker.buttonText : heroPro.buttonText'
           :button-color='isMaker ? heroMaker.buttonColor : heroPro.buttonColor'
+          :coda-form-url='isMaker ? heroMaker.codaFormUrl : heroPro.codaFormUrl'
           @hero-switch-value='handleHeroSwitchValue'
         ></app-hero>
       </div>
@@ -243,7 +244,8 @@ export default {
         selectLabel: 'I need help with...',
         selectPlaceholder: 'ex. Home renovations',
         buttonText: 'Get Started',
-        buttonColor: 'has-background-info'
+        buttonColor: 'has-background-info has-text-white',
+        codaFormUrl: 'https://coda.io/form/Makr_duLAuqP2XlW'
       },
       heroPro: {
         title: 'Get paid for your personalized expertise from anywhere, anytime.',
@@ -251,7 +253,8 @@ export default {
         selectLabel: 'I can help makers with...',
         selectPlaceholder: 'Select your area of expertise',
         buttonText: 'Start Earning',
-        buttonColor: 'has-background-primary'
+        buttonColor: 'has-background-primary',
+        codaFormUrl: 'https://coda.io/form/Makr_dRtypX1uRDH'
       },
       exploreProjectCards: [{
         title: 'Interior Design',
