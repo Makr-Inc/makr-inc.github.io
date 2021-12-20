@@ -73,7 +73,7 @@
           Whether you need quick answers, project-specific feedback, or step-by-step guidance, our pros are available at
           anytime to get you where you’re going
         </p>
-        <b-button tag='a' :href="heroPro.codaFormUrl" target="_blank" type='is-info'>Start Getting Feedback</b-button>
+        <b-button tag='a' :href="heroMaker.codaFormUrl" target="_blank" type='is-info'>Start Getting Feedback</b-button>
       </div>
       <div class='column is-one-third'>
         <img class='image' :src="require('~/assets/get-feedback.png')" alt='get-feedback-image' />
@@ -99,7 +99,7 @@
               Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from
               anywhere.
             </p>
-            <b-button type='is-info'>Learn More</b-button>
+            <b-button type='is-info' @click='goToPro'>Learn More</b-button>
           </div>
           <div class='column is-one-third is-flex level'>
             <img class='level-item' :src="require('~/assets/become-a-makr.png')" alt='become a pro' />
@@ -193,7 +193,7 @@
       <div class='column has-text-centered p-5 mb-6'>
         <p class='title is-size-5 mb-3'>Opportunity is waiting for you</p>
         <p class='mb-3'>Join today to support projects and earn on your own terms</p>
-        <b-button type='is-primary'>Become a Makr Pro</b-button>
+        <b-button tag='a' :href='heroPro.codaFormUrl' target='_blank' type='is-info'>Become a Makr Pro</b-button>
       </div>
     </div>
 
@@ -294,6 +294,11 @@ export default {
     }
   },
   methods: {
+    goToPro() {
+      const proSwitch = document.querySelector("#pro-switch .radio.button");
+      proSwitch.click()
+      window.scrollTo(0, 0)
+    },
     handleHeroSwitchValue(value) {
       this.isMaker = value === 'maker'
       this.$nuxt.$emit('is-maker', this.isMaker);
