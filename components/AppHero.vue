@@ -4,14 +4,14 @@
       <div class="columns">
         <div class="column is-two-thirds">
             <app-maker-pro-switch @switch-value="handleSwitchValue"></app-maker-pro-switch>
-            <p class="title is-spaced is-size-5-mobile">
+            <p class="title is-spaced is-size-5-mobile" :class="{'has-text-white': !isMaker}">
               {{ title }}
             </p>
             <p class="subtitle is-hidden-mobile">
               {{ subtitle }}
             </p>
             <div class='select-and-button-container'>
-              <b-field :label="selectLabel">
+              <b-field :label="selectLabel" :class="{'has-text-white': !isMaker}">
                 <b-select :placeholder="selectPlaceholder" expanded>
                   <option
                     v-for="option in selectOptions"
@@ -21,7 +21,7 @@
                   </option>
                 </b-select>
               </b-field>
-              <b-button tag='a' href='http://eepurl.com/hNXWtT' class='mb-3' type="is-primary">{{ buttonText }}</b-button>
+              <b-button tag='a' :href='codaFormUrl' target="_blank" class='mb-3' :class='buttonColor'>{{ buttonText }}</b-button>
             </div>
           </div>
         <div class="column is-one-third is-flex level">
@@ -60,20 +60,34 @@ export default {
       type: String,
       default: 'Button Text'
     },
+    buttonColor: {
+      type: String,
+      default: 'has-background-info'
+    },
+    codaFormUrl: {
+      type: String,
+      default: 'https://coda.io/form/Makr_duLAuqP2XlW'
+    },
     selectOptions: {
       type: Array,
       default: () => ['Woodworking', 'Home recording', 'Social media marketing']
     }
   },
+  data() {
+    return {
+      isMaker: true
+    }
+  },
   methods: {
     handleSwitchValue(value) {
+      this.isMaker = value === 'maker'
       this.$emit('hero-switch-value', value)
     }
   }
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 @import "~bulma/sass/utilities/_all.sass";
 
 .select-and-button-container {
@@ -83,6 +97,11 @@ export default {
 .field {
   .control {
     margin-right: 1rem;
+  }
+}
+.has-text-white.field {
+  .label {
+    color: #fff
   }
 }
 

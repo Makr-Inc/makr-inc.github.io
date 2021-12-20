@@ -9,7 +9,7 @@
     </div>
     <div class='columns'>
       <div v-for='item in howItWorks' :key='item.title' class='column is-flex is-flex-grow-1'>
-        <div class='card' :class='[ isMaker ? "has-background-info" : "has-background-primary" ]'>
+        <div :class='[ isMaker ? "has-background-primary" : "has-background-primary" ]'>
           <div class='card-content has-text-black'>
             <b-icon
               :icon='item.icon'

@@ -1,12 +1,14 @@
 <template>
     <b-field class="is-inline-block mb-4">
-      <b-radio-button v-model="switchValue"
+      <b-radio-button id="maker-switch"
+                      v-model="switchValue"
                       native-value="maker"
-                      type="is-primary">
+                      type="is-info">
         Makers
       </b-radio-button>
 
-      <b-radio-button v-model="switchValue"
+      <b-radio-button id="pro-switch"
+                      v-model="switchValue"
                       native-value="pro"
                       type="is-primary">
         Pros

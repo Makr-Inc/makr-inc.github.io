@@ -7,11 +7,11 @@
     </div>
     <div class="card-content">
       <p class="is-size-6">{{ projectCard.title }}</p>
-      <p class="is-size-7 has-text-primary">
+      <p class="is-size-7 has-text-info">
         <b-icon icon="account" size="is-small"></b-icon>
         {{ projectCard.prosAvailable }} pros available
       </p>
-      <p class="is-size-7 has-text-primary">
+      <p class="is-size-7 has-text-info">
         <b-icon icon="tag" size="is-small"></b-icon>
         {{ projectCard.priceRange }} / avg session
       </p>

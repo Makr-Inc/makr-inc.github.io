@@ -3,7 +3,7 @@
     <!--    hero block-->
     <div
       class='columns is-centered mb-6'
-      :class='[ isMaker ? "has-background-orange" : "has-background-warning" ]'
+      :class='[ isMaker ? "has-background-primary" : "has-background-info" ]'
     >
       <div class='column is-9'>
         <app-hero
@@ -12,6 +12,8 @@
           :select-label='isMaker ? heroMaker.selectLabel : heroPro.selectLabel'
           :select-placeholder='isMaker ? heroMaker.selectPlaceholder : heroPro.selectPlaceholder'
           :button-text='isMaker ? heroMaker.buttonText : heroPro.buttonText'
+          :button-color='isMaker ? heroMaker.buttonColor : heroPro.buttonColor'
+          :coda-form-url='isMaker ? heroMaker.codaFormUrl : heroPro.codaFormUrl'
           @hero-switch-value='handleHeroSwitchValue'
         ></app-hero>
       </div>
@@ -24,7 +26,7 @@
       </div>
     </div>
     <div v-if='isMaker' class='columns is-centered mb-5'>
-      <div class='column is-9 has-background-primary-light'>
+      <div class='column is-9 has-background-info-light'>
         <app-explore-projects :explore-project-cards='exploreProjectCards'></app-explore-projects>
       </div>
     </div>
@@ -45,15 +47,15 @@
     </div>
 
     <!--    testimonial carousel block -->
-    <div v-if='isMaker' class='columns is-centered has-background-warning'>
+    <div v-if='isMaker' class='columns is-centered has-background-info'>
       <div class='column is-9'>
-        <p class='title is-size-4 has-text-centered'>
+        <p class='title is-size-4 has-text-centered has-text-white'>
           Every project has its unique challenges.<br>
           We’re here to help.
         </p>
       </div>
     </div>
-    <div v-if='isMaker' class='columns is-centered has-background-warning mb-6'>
+    <div v-if='isMaker' class='columns is-centered has-background-info mb-6'>
       <div class='column is-9'>
         <app-testimonial-carousel class='is-hidden-mobile'></app-testimonial-carousel>
         <app-testimonial-card v-for='testimony in testimonies' :key='testimony.title' class='is-hidden-tablet'
@@ -71,7 +73,7 @@
           Whether you need quick answers, project-specific feedback, or step-by-step guidance, our pros are available at
           anytime to get you where you’re going
         </p>
-        <b-button type='is-primary'>Start Getting Feedback</b-button>
+        <b-button tag='a' :href="heroMaker.codaFormUrl" target="_blank" type='is-info'>Start Getting Feedback</b-button>
       </div>
       <div class='column is-one-third'>
         <img class='image' :src="require('~/assets/get-feedback.png')" alt='get-feedback-image' />
@@ -79,7 +81,7 @@
     </div>
 
     <!--    how it works maker block-->
-    <div v-if='isMaker' class='columns is-centered has-background-info mb-6'>
+    <div v-if='isMaker' class='columns is-centered has-background-primary mb-6'>
       <div class='column is-9'>
         <app-how-it-works :is-maker='isMaker' class='mb-6'></app-how-it-works>
       </div>
@@ -97,7 +99,7 @@
               Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from
               anywhere.
             </p>
-            <b-button type='is-primary'>Learn More</b-button>
+            <b-button type='is-info' @click='goToPro'>Learn More</b-button>
           </div>
           <div class='column is-one-third is-flex level'>
             <img class='level-item' :src="require('~/assets/become-a-makr.png')" alt='become a pro' />
@@ -191,19 +193,19 @@
       <div class='column has-text-centered p-5 mb-6'>
         <p class='title is-size-5 mb-3'>Opportunity is waiting for you</p>
         <p class='mb-3'>Join today to support projects and earn on your own terms</p>
-        <b-button type='is-primary'>Become a Makr Pro</b-button>
+        <b-button tag='a' :href='heroPro.codaFormUrl' target='_blank' type='is-info'>Become a Makr Pro</b-button>
       </div>
     </div>
 
     <!--    common questions block-->
-    <div class='columns is-centered has-background-primary-light'>
+    <div class='columns is-centered has-background-warning has-text-black'>
       <div class='column is-two-thirds'>
         <p class='title has-text-centered-tablet is-size-4'>Common Questions</p>
         <div v-for='commonQuestion in commonQuestions' :key='commonQuestion.question' class='mb-4'>
           <p class='has-text-weight-bold'>{{ commonQuestion.question }}</p>
           <p>{{ commonQuestion.answer }}</p>
         </div>
-        <p class='mb-6'>Still have questions? <a href='mailto:mikeulvila@me.com'>Send us a message</a></p>
+        <p class='mb-6'>Still have questions? <a href='mailto:makrhelp@gmail.com' class='has-text-weight-bold is-underlined'>Send us a message</a></p>
       </div>
     </div>
   </div>
@@ -241,14 +243,18 @@ export default {
         subtitle: 'Affordable experts available at anytime to help you get your jobs done with confidence, all from your device',
         selectLabel: 'I need help with...',
         selectPlaceholder: 'ex. Home renovations',
-        buttonText: 'Get Started'
+        buttonText: 'Get Started',
+        buttonColor: 'has-background-info has-text-white',
+        codaFormUrl: 'https://coda.io/form/Makr_duLAuqP2XlW'
       },
       heroPro: {
         title: 'Get paid for your personalized expertise from anywhere, anytime.',
         subtitle: 'Help makers accomplish more specific problems with their projects, right from your device',
         selectLabel: 'I can help makers with...',
         selectPlaceholder: 'Select your area of expertise',
-        buttonText: 'Start Earning'
+        buttonText: 'Start Earning',
+        buttonColor: 'has-background-primary',
+        codaFormUrl: 'https://coda.io/form/Makr_dRtypX1uRDH'
       },
       exploreProjectCards: [{
         title: 'Interior Design',
@@ -288,6 +294,11 @@ export default {
     }
   },
   methods: {
+    goToPro() {
+      const proSwitch = document.querySelector("#pro-switch .radio.button");
+      proSwitch.click()
+      window.scrollTo(0, 0)
+    },
     handleHeroSwitchValue(value) {
       this.isMaker = value === 'maker'
       this.$nuxt.$emit('is-maker', this.isMaker);
@@ -300,8 +311,5 @@ export default {
 @import "assets/scss/main";
 .carousel-container {
   margin: 0 6rem 2rem;
-}
-.has-background-orange {
-  background-color: lighten($orange, 10%);
 }
 </style>
