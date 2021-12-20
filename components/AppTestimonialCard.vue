@@ -1,7 +1,7 @@
 <template>
-  <div class='card has-background-warning'>
+  <div class='card has-background-info has-text-white'>
     <div class="card-content">
-      <p class='title is-size-5'>{{ testimony.title }}</p>
+      <p class='title is-size-5 has-text-white'>{{ testimony.title }}</p>
       <blockquote class="is-size-6 has-text-weight-medium">
         “{{ testimony.quote }}”
       </blockquote>

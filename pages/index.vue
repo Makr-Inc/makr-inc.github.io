@@ -26,7 +26,7 @@
       </div>
     </div>
     <div v-if='isMaker' class='columns is-centered mb-5'>
-      <div class='column is-9 has-background-primary-light'>
+      <div class='column is-9 has-background-info-light'>
         <app-explore-projects :explore-project-cards='exploreProjectCards'></app-explore-projects>
       </div>
     </div>
@@ -47,15 +47,15 @@
     </div>
 
     <!--    testimonial carousel block -->
-    <div v-if='isMaker' class='columns is-centered has-background-warning'>
+    <div v-if='isMaker' class='columns is-centered has-background-info'>
       <div class='column is-9'>
-        <p class='title is-size-4 has-text-centered'>
+        <p class='title is-size-4 has-text-centered has-text-white'>
           Every project has its unique challenges.<br>
           We’re here to help.
         </p>
       </div>
     </div>
-    <div v-if='isMaker' class='columns is-centered has-background-warning mb-6'>
+    <div v-if='isMaker' class='columns is-centered has-background-info mb-6'>
       <div class='column is-9'>
         <app-testimonial-carousel class='is-hidden-mobile'></app-testimonial-carousel>
         <app-testimonial-card v-for='testimony in testimonies' :key='testimony.title' class='is-hidden-tablet'
@@ -73,7 +73,7 @@
           Whether you need quick answers, project-specific feedback, or step-by-step guidance, our pros are available at
           anytime to get you where you’re going
         </p>
-        <b-button type='is-primary'>Start Getting Feedback</b-button>
+        <b-button tag='a' :href="heroPro.codaFormUrl" target="_blank" type='is-info'>Start Getting Feedback</b-button>
       </div>
       <div class='column is-one-third'>
         <img class='image' :src="require('~/assets/get-feedback.png')" alt='get-feedback-image' />
@@ -81,7 +81,7 @@
     </div>
 
     <!--    how it works maker block-->
-    <div v-if='isMaker' class='columns is-centered has-background-info mb-6'>
+    <div v-if='isMaker' class='columns is-centered has-background-primary mb-6'>
       <div class='column is-9'>
         <app-how-it-works :is-maker='isMaker' class='mb-6'></app-how-it-works>
       </div>
@@ -99,7 +99,7 @@
               Help Makrs accomplish more with their projects, right from your device. Earn on your own time, from
               anywhere.
             </p>
-            <b-button type='is-primary'>Learn More</b-button>
+            <b-button type='is-info'>Learn More</b-button>
           </div>
           <div class='column is-one-third is-flex level'>
             <img class='level-item' :src="require('~/assets/become-a-makr.png')" alt='become a pro' />
@@ -198,14 +198,14 @@
     </div>
 
     <!--    common questions block-->
-    <div class='columns is-centered has-background-primary-light'>
+    <div class='columns is-centered has-background-warning has-text-black'>
       <div class='column is-two-thirds'>
         <p class='title has-text-centered-tablet is-size-4'>Common Questions</p>
         <div v-for='commonQuestion in commonQuestions' :key='commonQuestion.question' class='mb-4'>
           <p class='has-text-weight-bold'>{{ commonQuestion.question }}</p>
           <p>{{ commonQuestion.answer }}</p>
         </div>
-        <p class='mb-6'>Still have questions? <a href='mailto:mikeulvila@me.com'>Send us a message</a></p>
+        <p class='mb-6'>Still have questions? <a href='mailto:makrhelp@gmail.com' class='has-text-weight-bold is-underlined'>Send us a message</a></p>
       </div>
     </div>
   </div>
